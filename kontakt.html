@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto servis</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="meni">
+          <li class="linkovi">
+            <a href="index.html">Početna</a>
+          </li>
+          <li class="linkovi">
+            <a href="usluge.html">Usluge</a>
+          </li>
+          <li class="linkovi">
+            <a href="kontakt.html">Kontakt</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>Zakažite Vaš termin!</h2>
+      <form class="wrapper">
+        <label>Ime i prezime:</label>
+        <input class="polja" type="text" placeholder="Ime i prezime" required />
+        <label>E-mail:</label>
+        <input class="polja" type="email" placeholder="Email" required />
+        <label>Telefon:</label>
+        <input class="polja" type="phone" placeholder="Telefon" required />
+        <label>Vrsta servisa:</label>
+        <select class="polja" name="servis" id="servis">
+          <option value="ulje">Zamena ulja i filtera</option>
+          <option value="filter">Zamena filtera vazduha</option>
+          <option value="kaiš">Zamena remena</option>
+        </select>
+        <button class="dugme" type="submit">Zakaži</button>
+      </form>
+    </main>
+  </body>
+</html>

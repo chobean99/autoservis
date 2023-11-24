@@ -1,0 +1,226 @@
+/*margine su nula, auto znaci da se elementi centriraju
+border-box oznacava da padding i margine elemenata ne mogu uticati na veličinu elemenata,
+pozadina je siva */
+body {
+  margin: 0 auto;
+  box-sizing: border-box;
+  background-color: rgb(57, 57, 57);
+}
+
+/*elementi flex-boxa koji oznacavaju da ce se sve stavke u meniju slagati u redu
+i postavljen je jednak razmak izmedju njih te su obrisane tačkice koje se po defaultu nalaze u listi*/
+.meni {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+
+/*pozadina svake stavke u meniju je bela, padding oko teksta je 1rem=16px
+boja teksta je plava, velicina fonta 12 pointa, podebljan tekst i border zaobljen za 10%*/
+.linkovi {
+  background-color: rgb(226, 226, 226);
+  padding: 1rem;
+  color: #184d9e;
+  font-size: 12pt;
+  font-weight: 600;
+  border-radius: 10%;
+}
+
+/*kada se predje preko teksta pojavi se hover efekat sa senkom koja se nalazi desno i ispod dugmeta, 0.2 je
+prozirnost (opacity)*/
+.linkovi:hover {
+  box-shadow: 3px 10px rgb(0 0 0 / 0.2);
+}
+/*da tekst linka ne bude podvučen i plav po defaultu kako inace linkovi izgledaju*/
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/*slika na pocetnoj ima visinu 60 viewport height odnosno zauzima 60% prozora, sirina 100% prozora (viewporta)
+postavljena kao cover, centrirana i ne ponavlja se, pozicija relativna u odnosu na mesto gde treba da stoji*/
+.hero-image {
+  height: 60vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+/*centriran tekst unutar slike na sredinu i pozicija je apsolutna odnosno pozicioniran je u odnosu na parent element,
+tj. hero image, slova su bela*/
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+/*crna pozadina iza slova ali je prozirnost 0.6 pa deluju sivo, padding oko slova 10px, crni border zaobljen 5%*/
+.naslov {
+  background-color: black;
+  opacity: 0.6;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5%;
+}
+
+/*dugme unutar hero img crno sa opacity od 0.5 pa deluje sivo, 1rem izmedju teksta i margine,
+boja slova je bela i border je beo*/
+.ghost {
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  border: 2px solid white;
+}
+/*prelaskom misa pozadina dugmeta je bela, a boja slova crna*/
+.ghost:hover {
+  background-color: aliceblue;
+  color: black;
+}
+/*svi naslovi drugog reda centrirani i bele boje*/
+h2 {
+  text-align: center;
+  color: white;
+}
+/*fiksne velicine slike 300x300 sa zaobljenjem od 10% to su one tri na pocetnoj*/
+.slike {
+  width: 300px;
+  height: 300px;
+  border-radius: 10%;
+}
+/*slova ispod slika bela i centrirana*/
+.ponuda {
+  text-align: center;
+  color: #ffffff;
+}
+/*sirina mu je preko celog ekrana, pozadina plava, slova bela, gornji i donji padding je 1rem=16px
+tekst je centriran*/
+footer {
+  width: 100%;
+  background-color: #184d9e;
+  color: #ffffff;
+  padding: 1rem 0;
+  text-align: center;
+}
+/*pozicioniran kao flex-box da u jednom redu budu 3 kartice, padding izmedju njih 32px, centrirane po horizontali
+i razmak izmedju svake postavljen*/
+.kartice {
+  display: flex;
+  padding: 2rem;
+  justify-content: space-around;
+}
+/*animacija na str usluge fiksna sirina i visina, pocetna pozadina plava, ime animacije example
+traje 6 sekundi, ponavlja se 5 puta, razmak oko teksta 0.5rem, tekst centriran, vertikalno centriran isto,
+margin auto znaci da je na sredini prozora i da je border zaobljen 12px*/
+.animacija {
+  width: 300px;
+  height: 30px;
+  background-color: #184d9e;
+  animation-name: example;
+  animation-duration: 6s;
+  animation-iteration-count: 5;
+  padding: 0.5rem;
+  font-size: 14pt;
+  text-align: center;
+  justify-items: center;
+  margin: auto;
+  border: 1px;
+  border-radius: 12px;
+}
+/*od gornje margine odmaknut 2rema, pozadina bela z-index nasleđen od roditeljske klase,
+flexbox se koristi za pozicioniranje u jednom redu centriran i horizontalno i vertikalno, velicina 15pointa.*/
+.cenovnik {
+  margin-top: 2rem;
+  background-color: aliceblue;
+  z-index: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 15pt;
+}
+/*stavke liste imaju razmak izmedju teksta i podesen font*/
+li {
+  padding: 0.5rem 2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/*forma na kontakt str. pozicionirana preko flexa kao u kolone i centrirana horizontalno,
+pozadina neka svetlija siva i padding stavljen da ne ide od ivice do ivice*/
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 20rem;
+  background-color: #7a7a7a;
+}
+/*input poljima definisana velicina fonta, razmak izmedju teksta i margine, border zaobljen 5px i odvojen od 
+donje margine 1rem*/
+.polja {
+  font-size: 14pt;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+/*tekst iznad input polja plave boje 14 velicina fonta i padding pola rema*/
+label {
+  color: #184d9e;
+  font-size: 14pt;
+  padding: 0.5rem;
+}
+/*gugme u formi plavo ima cursor kao onaj prst kad se predje preko njega, bela slova ostalo znas*/
+.dugme {
+  padding: 0.7rem;
+  background-color: #184d9e;
+  font-size: 14pt;
+  color: #ffffff;
+  border: 2px solid white;
+  cursor: pointer;
+}
+/*animacija example se menja u 6 sekundi iz plave pozadine sa belim slovima u obrnuto*/
+@keyframes example {
+  from {
+    background-color: rgb(27, 79, 201);
+    color: #ffffff;
+  }
+  to {
+    background-color: rgb(255, 255, 255);
+    color: #184d9e;
+  }
+}
+/*na manjim ekranima promenjen uglavnom flex-box iz reda u kolonu da se elementi slazu jedan ispod drugog i
+za sledece klase*/
+@media screen and (max-width: 990px) {
+  .cenovnik {
+    display: flex;
+    flex-direction: column;
+  }
+  .slike {
+    width: 250px;
+  }
+  .kartice {
+    display: flex;
+    flex-direction: column;
+  }
+  /*meni na malim ekranima se slaze tako da linkovi idu jedan ispod drugog da bi bili responzivni*/
+  .meni {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    list-style-type: none;
+  }
+  .linkovi {
+    background-color: #184d9e;
+    padding: 0.7rem;
+    color: #ffffff;
+    font-size: 12pt;
+    font-weight: 600;
+    border-radius: 2%;
+    width: 80%;
+  }
+  form {
+    padding: 2rem;
+  }
+}
